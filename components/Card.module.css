@@ -6,6 +6,10 @@
   padding: 25px;
   text-align: center;
   max-width: 200px;
+  position: relative;
+}
+.card .id {
+  position: relative;
 }
 
 .card .img-container {

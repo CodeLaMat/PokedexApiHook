@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import "./Pokesingle.css";
 
 export default function Pokesingle() {
   const params = useParams();
@@ -22,6 +23,7 @@ export default function Pokesingle() {
   if (isloading) {
     return <p>Loading...</p>;
   }
+
   return (
     <div className="pokeSingle_container">
       <div className="poke_img">
@@ -30,15 +32,19 @@ export default function Pokesingle() {
           alt={data.name}
         ></img>
       </div>
-      <div>
+      <div className="poke_info">
         <h2>{data.name}</h2>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <div className="poke_id">id: {data.id}</div>
+        <div className="poke_height">height: {data.height}</div>
+        <div className="poke_weight">weight: {data.weight}</div>
+        {/* <div className="heldItems">{data.held_items.name}</div> */}
+        {/* <p>{data.types[0].type.name}</p>
+        <p>{data.types[1].type.name}</p> */}
       </div>
 
-      <button onClick={() => navigate(-1)}>Back</button>
+      <span onClick={() => navigate(-1)} class="material-symbols-outlined">
+        arrow_back
+      </span>
     </div>
   );
 }

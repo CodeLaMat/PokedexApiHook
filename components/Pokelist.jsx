@@ -33,9 +33,12 @@ export default function Pokelist() {
       {data.map((card) => (
         <Card
           name={card.name}
-          key={card.name}
           image={card.sprites.other["official-artwork"].front_default}
           id={card.id}
+          height={card.height}
+          weight={card.weight}
+          heldItem={card["held_items"].name}
+          types={card.types}
         />
       ))}
     </div>
